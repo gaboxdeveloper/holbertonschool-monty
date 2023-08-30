@@ -1,11 +1,15 @@
 #include "monty.h"
 
-size_t
-pint(const stack_t *h)
+void
+pint(const stack_t *top)
 {
-	size_t nodes = 0;
-
-	printf("%d\n", h->n);
-
-	return (nodes);
+    if (top)
+	{
+        printf("%d\n", top->n);
+    }
+	else
+	{
+        fprintf(stderr, "Error: can't pint, stack empty\n");
+        exit(EXIT_FAILURE);
+    }
 }

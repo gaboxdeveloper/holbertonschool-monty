@@ -40,7 +40,7 @@ typedef struct instruction_s
 extern stack_t *top;
 
 void push(char *arg);
-size_t pall(const struct stack_s *h);
-size_t pint(const stack_t *h);
+size_t pall(const stack_t *h);
+void pint(const stack_t *top);
 
 #endif

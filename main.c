@@ -27,13 +27,11 @@ main(int argc, char *argv[])
 		sscanf(line, "%s %s", command, argument);
 	
 		if (strcmp(command, "push") == 0)
-		{
 			push(argument);
-		}
 		else if (strcmp(command, "pall") == 0)
-		{
 			pall(top);
-		}
+		else if (strcmp(command, "pint") == 0)
+			pint(top);
 	}
 
 	fclose(file);

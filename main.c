@@ -1,7 +1,7 @@
 #include "monty.h"
 
 int
-main ()
+main (void)
 {
 	stack_t *head = NULL;
 

@@ -38,7 +38,7 @@ typedef struct instruction_s
 
 struct nodetop *top = NULL;
 
-void push(int a);
-size_t pall(const stack_t *h);
+void push(stack_t **head, int a);
+size_t pall(const struct stack_s *h);
 
 #endif

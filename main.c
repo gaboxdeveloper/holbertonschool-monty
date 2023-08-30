@@ -5,11 +5,17 @@ main (void)
 {
 	stack_t *head = NULL;
 
-	push(1);
-	push(2);
-	
-	size_t numNodes = pall(head);
-	pall(head);
+    push(&head, 1);
+    push(&head, 2);
 
-	return (0);
+    size_t numNodes = pall(head);
+    printf("Número de nodos en la pila: %zu\n", numNodes);
+
+    while (head != NULL) {
+        stack_t *temp = head;
+        head = head->next;
+        free(temp);
+    }
+
+    return 0;
 }

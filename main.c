@@ -22,8 +22,8 @@ main(int argc, char *argv[])
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		char command[10];
-		int argument = 0;
-		sscanf(line, "%s %d", command, &argument);
+		char argument[100];
+		sscanf(line, "%s %s", command, argument);
 
 		if (strcmp(command, "push") == 0)
 		{
@@ -32,10 +32,6 @@ main(int argc, char *argv[])
 		else if (strcmp(command, "pall") == 0)
 		{
 			pall(top);
-		}
-		else
-		{
-			fprintf(stderr, "Error: command not found\n");
 		}
 	}
 

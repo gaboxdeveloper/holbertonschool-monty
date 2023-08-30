@@ -9,9 +9,9 @@ push(char *arg)
 
 	if (value == 0 && arg[0] != '0')
 	{
-        fprintf(stderr, "Error: Usage: push integer\n");
-        exit(EXIT_FAILURE);
-    }
+		fprintf(stderr, "Error: Usage: push integer\n");
+		exit(EXIT_FAILURE);
+	}
 
 	stack_t *new_node = malloc(sizeof(stack_t));
 

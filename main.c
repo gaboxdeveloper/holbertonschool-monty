@@ -25,9 +25,7 @@ main(int argc, char *argv[])
 		char argument[100];
 
 		sscanf(line, "%s %s", command, argument);
-		if (!line)
-			return (NULL);
-
+	
 		if (strcmp(command, "push") == 0)
 		{
 			push(argument);

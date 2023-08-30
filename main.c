@@ -12,7 +12,7 @@ main(int argc, char *argv[])
     FILE *file = fopen(argv[1], "r");
     if (!file)
 	{
-        fprintf(stderr, "Error: Cannot open file %s\n", argv[1]);
+        fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         return (EXIT_FAILURE);
     }
 

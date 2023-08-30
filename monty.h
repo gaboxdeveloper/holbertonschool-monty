@@ -41,5 +41,6 @@ extern stack_t *top;
 
 void push(char *arg);
 size_t pall(const struct stack_s *h);
+size_t pint(const stack_t *h);
 
 #endif

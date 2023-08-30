@@ -5,15 +5,15 @@ main(int argc, char *argv[])
 {
     if (argc != 2)
 	{
-        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-        return EXIT_FAILURE;
+        fprintf(stderr, "USAGE: %s monty file\n", argv[0]);
+        return (EXIT_FAILURE);
     }
 
     FILE *file = fopen(argv[1], "r");
     if (!file)
 	{
         fprintf(stderr, "Error: Cannot open file %s\n", argv[1]);
-        return EXIT_FAILURE;
+        return (EXIT_FAILURE);
     }
 
     char line[100];
@@ -31,6 +31,10 @@ main(int argc, char *argv[])
 		else if (strcmp(command, "pall") == 0)
 		{
             pall(top);
+        }
+        else
+        {
+            fprintf(stderr, "Error: command not found\n");
         }
     }
 

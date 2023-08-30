@@ -21,18 +21,19 @@ main(int argc, char *argv[])
 
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
-		char command[10] = "";
-        char argument[100] = "";
+		char command[10];
+		char argument[100];
 
-        sscanf(line, "%9s %99s", command, argument);
-        if (strcmp(command, "push") == 0)
+		sscanf(line, "%s %s", command, argument);
+	
+		if (strcmp(command, "push") == 0)
 		{
-            push(atoi(argument));
-        }
+			push(argument);
+		}
 		else if (strcmp(command, "pall") == 0)
 		{
-            pall(top);
-        }
+			pall(top);
+		}
 	}
 
 	fclose(file);

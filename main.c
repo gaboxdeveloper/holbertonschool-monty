@@ -23,6 +23,7 @@ main(int argc, char *argv[])
 	{
 		char command[10];
 		char argument[100];
+
 		sscanf(line, "%s %s", command, argument);
 
 		if (strcmp(command, "push") == 0)
@@ -41,7 +42,7 @@ main(int argc, char *argv[])
 	{
 		stack_t *temp = top;
 		top = top->next;
-		
+
 		free(temp);
 	}
 

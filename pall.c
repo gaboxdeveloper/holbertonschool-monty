@@ -12,5 +12,5 @@ pall(const stack_t *h)
 		nodes++;
 	}
 
-	return nodes;
+	return (nodes);
 }

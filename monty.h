@@ -37,9 +37,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-struct nodetop *top = NULL;
+extern stack_t *top;
 
-void push(stack_t **head, int a);
+void push(int a);
 size_t pall(const struct stack_s *h);
 
 #endif

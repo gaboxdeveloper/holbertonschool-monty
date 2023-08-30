@@ -5,10 +5,10 @@ main (void)
 {
 	stack_t *head = NULL;
 
-    push(&head, 1);
-    push(&head, 2);
+    push(1);
+    push(2);
 
-    size_t numNodes = pall(head);
+    pall(head);
 
     while (head != NULL) {
         stack_t *temp = head;

@@ -1,7 +1,9 @@
 #include "monty.h"
 
+stack_t *top = NULL;
+
 void
-push(stack_t **head, int a)
+push(int a)
 {
 	stack_t *new;
 

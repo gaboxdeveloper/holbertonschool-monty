@@ -1,20 +1,47 @@
 #include "monty.h"
 
 int
-main (void)
+main(int argc, char *argv[])
 {
-	stack_t *head = NULL;
+    if (argc != 2)
+	{
+        fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
+        return EXIT_FAILURE;
+    }
 
-    push(1);
-    push(2);
+    FILE *file = fopen(argv[1], "r");
+    if (!file)
+	{
+        fprintf(stderr, "Error: Cannot open file %s\n", argv[1]);
+        return EXIT_FAILURE;
+    }
 
-    pall(head);
+    char line[100];
 
-    while (head != NULL) {
-        stack_t *temp = head;
-        head = head->next;
+    while (fgets(line, sizeof(line), file) != NULL)
+	{
+        char command[10];
+        int argument = 0;
+        sscanf(line, "%s %d", command, &argument);
+
+        if (strcmp(command, "push") == 0)
+		{
+            push(argument);
+        }
+		else if (strcmp(command, "pall") == 0)
+		{
+            pall(top);
+        }
+    }
+
+    fclose(file);
+
+    while (top != NULL)
+	{
+        stack_t *temp = top;
+        top = top->next;
         free(temp);
     }
 
-    return 0;
+    return (0);
 }

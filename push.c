@@ -8,7 +8,7 @@ push(stack_t **head, int a)
 	new = malloc(sizeof(stack_t));
 
 	if (!new)
-		return (NULL);
+		return;
 	
 	new->n = a;
 	new->next = top;

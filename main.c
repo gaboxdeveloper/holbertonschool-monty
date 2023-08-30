@@ -9,7 +9,6 @@ main (void)
     push(&head, 2);
 
     size_t numNodes = pall(head);
-    printf("Número de nodos en la pila: %zu\n", numNodes);
 
     while (head != NULL) {
         stack_t *temp = head;

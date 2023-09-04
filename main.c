@@ -36,9 +36,9 @@ main(int argc, char *argv[])
 		else if (strcmp(command, "pall") == 0)
 			pall(top);
 		else if (strcmp(command, "pop") == 0)
-			pop(top, line_number);
+			pop(&top, line_number);
 		else if (strcmp(command, "swap") == 0)
-			swap(top, line_number);
+			swap(&top, line_number);
 		else
 			fprintf(stderr, "L%u: unknown instruction pope\n", line_number);
 	}

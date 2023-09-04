@@ -1,6 +1,6 @@
 #include "monty.h"
 
-size_t
+void
 pall(const stack_t *h)
 {
 	size_t nodes = 0;
@@ -11,6 +11,4 @@ pall(const stack_t *h)
 		h = h->next;
 		nodes++;
 	}
-
-	return (nodes);
 }

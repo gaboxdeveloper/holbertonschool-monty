@@ -30,20 +30,23 @@ main(int argc, char *argv[])
 
 		int num_items = sscanf(line, "%9s %99s", command, argument);
 
-		if (strcmp(command, "push") == 0)
-			push(argument);
-		else if (strcmp(command, "pint") == 0)
-			pint(top, line_number);
-		else if (strcmp(command, "pall") == 0)
-			pall(top);
-		else if (strcmp(command, "pop") == 0)
-			pop(&top, line_number);
-		else if (strcmp(command, "swap") == 0)
-			swap(&top, line_number);
-		else
+		if (num_items)
 		{
-			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
-			return (1);
+			if (strcmp(command, "push") == 0)
+				push(argument);
+			else if (strcmp(command, "pint") == 0)
+				pint(top, line_number);
+			else if (strcmp(command, "pall") == 0)
+				pall(top);
+			else if (strcmp(command, "pop") == 0)
+				pop(&top, line_number);
+			else if (strcmp(command, "swap") == 0)
+				swap(&top, line_number);
+			else
+			{
+				fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
+				return (1);
+			}
 		}
 	}
 

@@ -1,7 +1,5 @@
 #include "monty.h"
 
-stack_t *top = NULL;
-
 void
 push(char *arg)
 {

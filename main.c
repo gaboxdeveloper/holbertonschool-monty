@@ -1,5 +1,7 @@
 #include "monty.h"
 
+stack_t *top = NULL;
+
 int
 main(int argc, char *argv[])
 {
@@ -18,21 +20,25 @@ main(int argc, char *argv[])
 	}
 
 	char line[100];
+	int line_number = 0;
 
-	while (fgets(line, sizeof(line), file) != NULL)
+    while (fgets(line, sizeof(line), file) != NULL)
 	{
-		char command[10];
-		char argument[100];
+        line_number++;
 
-		sscanf(line, "%s %s", command, argument);
-	
-		if (strcmp(command, "push") == 0)
-			push(argument);
-		else if (strcmp(command, "pall") == 0)
-			pall(top);
+        char command[10] = "";
+        char argument[100] = "";
+
+        sscanf(line, "%9s %99s", command, argument);
+        if (strcmp(command, "push") == 0)
+            push(argument);
 		else if (strcmp(command, "pint") == 0)
-			pint(top);
-	}
+            pint(top, line_number);
+		else if (strcmp(command, "pall") == 0)
+            pall(top);
+		else if (strcmp(command, "pop") == 0)
+    		pop(&top, line_number);
+    }
 
 	fclose(file);
 

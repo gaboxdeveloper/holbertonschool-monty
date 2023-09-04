@@ -41,6 +41,7 @@ extern stack_t *top;
 
 void push(char *arg);
 void pall(const stack_t *h);
-void pint(const stack_t *top);
+void pint(const stack_t *top, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
 
 #endif

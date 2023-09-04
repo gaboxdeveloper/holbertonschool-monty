@@ -40,7 +40,10 @@ main(int argc, char *argv[])
 		else if (strcmp(command, "swap") == 0)
 			swap(&top, line_number);
 		else
+		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
+			return (1);
+		}
 	}
 
 	fclose(file);

@@ -30,16 +30,6 @@ main(int argc, char *argv[])
 
 		int num_items = sscanf(line, "%9s %99s", command, argument);
 
-		if (num_items == EOF)
-		{
-			fprintf(stderr, "Error: Failed to read input\n");
-			return (EXIT_FAILURE);
-		}
-		else if (num_items != 2)
-		{
-			fprintf(stderr, "Error: Invalid command format at line %d\n", line_number);
-			return (EXIT_FAILURE);
-		}
 		if (strcmp(command, "push") == 0)
 			push(argument);
 		else if (strcmp(command, "pint") == 0)

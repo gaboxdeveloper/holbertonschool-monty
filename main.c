@@ -45,7 +45,7 @@ main(int argc, char *argv[])
 			else if (strcmp(command, "add") == 0)
 				add(&top, line_number);
 			else if (strcmp(command, "nop") == 0)
-				add(&top, line_number);
+				nop(&top, line_number);
 			else
 			{
 				fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);

@@ -33,7 +33,7 @@ main(int argc, char *argv[])
 		if (num_items)
 		{
 			if (strcmp(command, "push") == 0)
-				push(argument);
+				push(argument, line_number);
 			else if (strcmp(command, "pint") == 0)
 				pint(top, line_number);
 			else if (strcmp(command, "pall") == 0)

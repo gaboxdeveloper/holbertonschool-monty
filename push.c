@@ -1,13 +1,19 @@
 #include "monty.h"
 
 void
-push(char *arg)
+push(char *arg, unsigned int line_number)
 {
+	if (!arg)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
 	int value = atoi(arg);
 
 	if (value == 0 && arg[0] != '0')
 	{
-		fprintf(stderr, "Error: Usage: push integer\n");
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
